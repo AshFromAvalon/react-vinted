@@ -31,7 +31,7 @@ const offerRoutes = require("./routes/offer.js");
 app.use(offerRoutes);
 
 app.get("/", (req, res) => {
-  res.status(200).json({ messaeg: "Welcome to React Vinted API" });
+  res.status(200).json({ message: "Welcome to React Vinted API" });
 });
 
 app.all("*", (req, res) => {
