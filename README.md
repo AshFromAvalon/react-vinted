@@ -6,7 +6,7 @@ This a bootcamp project where we build a light version of Vinted.
 
 ## Packages
 
-- mongoose
+- [mongoose] (https://www.npmjs.com/package/mongoose "Mongoose")
 - express
   - express formidable
 - cryptojs
