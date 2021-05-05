@@ -8,6 +8,7 @@ require("dotenv").config();
 // Init server
 const app = express();
 app.use(formidable());
+app.use(cors);
 
 // Config Cloudinary
 cloudinary.config({
