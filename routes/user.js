@@ -61,10 +61,9 @@ router.post("/user/sign-up", async (req, res) => {
           console.log(error, result);
         }
       );
-
       newUser.account.avatar = uploadedFile;
-      await newUser.save();
     }
+    await newUser.save();
 
     res.status(200).json({
       _id: newUser._id,
