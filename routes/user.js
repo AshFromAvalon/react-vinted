@@ -49,7 +49,7 @@ router.post("/user/sign-up", async (req, res) => {
       salt,
     });
 
-    if (req.files.avatar.path) {
+    if (req.files.avatar) {
       // Upload file in cloudinary
       const filePath = req.files.avatar.path;
       const uploadedFile = await cloudinary.uploader.upload(
