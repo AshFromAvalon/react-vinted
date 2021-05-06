@@ -44,7 +44,7 @@ router.get("/offers", async (req, res) => {
     }
 
     // Calculate pagination
-    const numOfItemsToDisplay = limit ? Number(limit) : 5;
+    const numOfItemsToDisplay = limit ? Number(limit) : 20;
     const numOfItemsToSkip = Number(page) > 0 ? (Number(page) - 1) * limit : 0;
 
     // Apply filters
