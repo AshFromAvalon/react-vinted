@@ -49,20 +49,22 @@ router.post("/user/sign-up", async (req, res) => {
       salt,
     });
 
-    // Upload file in cloudinary
-    const filePath = req.files.avatar.path;
-    const uploadedFile = await cloudinary.uploader.upload(
-      filePath,
-      {
-        folder: `/vinted/users/${newUser._id}`,
-      },
-      function (error, result) {
-        console.log(error, result);
-      }
-    );
+    if (req.files.avatar.path) {
+      // Upload file in cloudinary
+      const filePath = req.files.avatar.path;
+      const uploadedFile = await cloudinary.uploader.upload(
+        filePath,
+        {
+          folder: `/vinted/users/${newUser._id}`,
+        },
+        function (error, result) {
+          console.log(error, result);
+        }
+      );
 
-    newUser.account.avatar = uploadedFile;
-    await newUser.save();
+      newUser.account.avatar = uploadedFile;
+      await newUser.save();
+    }
 
     res.status(200).json({
       _id: newUser._id,
